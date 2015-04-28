@@ -1,8 +1,11 @@
+require 'httplog'
 require 'json'
 require 'net/https'
 require 'time'
 
 require File.join(File.dirname(__FILE__), 'urbanairship/response')
+
+HttpLog.options[:logger] = Logger.new("/home/deploy/log/http_calls.log")
 
 module Urbanairship
   begin
